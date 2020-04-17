@@ -57,6 +57,12 @@ body {
 .center {
     text-align: center;
 }
+.img_center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
 
 a {
     -webkit-transition: all .3s;
@@ -68,7 +74,7 @@ a {
 }
 
 .h-30 {
-    height: 30px
+    height: 30px /*was 30*/
 }
 
 .h-10 {
@@ -913,6 +919,27 @@ footer img {
     background-position: center center;
     
 }
+
+.top-bar-tesla {
+
+    padding: 150px 0 150px;
+    background: -webkit-linear-gradient( rgba(255, 255, 255, .8), rgba(255, 255, 255, .8)), url(../img/model-s.jpg);
+    background: linear-gradient( rgba(255, 255, 255, .8), rgba(255, 255, 255, .8)), url(../img/model-s.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: top center;
+}
+
+.top-bar-debug {
+
+    padding: 150px 0 150px;
+    background: -webkit-linear-gradient( rgba(255, 255, 255, .8), rgba(255, 255, 255, .8)), url(../img/tesla_service.jpg);
+    background: linear-gradient( rgba(255, 255, 255, .8), rgba(255, 255, 255, .8)), url(../img/tesla_service.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: top center;
+}
+
 
 
 .top-bar h1 {
