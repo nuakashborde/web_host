@@ -22,8 +22,8 @@ title: akashbor.de
 email: borde.akash@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   a collection of stories, ideas, and funny mistakes
-baseurl: "akashbor.de" # the subpath of your site, e.g. /blog
-url: "akashbor.de" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
 #twitter_username: kashborde
 #github_username:  nuakashborde
 
