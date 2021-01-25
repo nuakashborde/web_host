@@ -11,6 +11,8 @@ layout: "post"
 - Add descriptions for each article
 - Make sure the default pulls from the title
 - Delete "akashbor.de" at the top, use something else as the title
+- Get rid of "Donate"
+- Put "Portfolio" as a resume for now at least
 
 
 # Workflow
