@@ -46,12 +46,14 @@ body {
     margin-bottom: 0.5rem;
 }
 .needs-details {
+    font-size: 1.0rem;
+    font-weight: 600;
     margin: 0.5rem 0 2rem 0;
     text-align: left;
 }
 
 .needs-list {
-    font-size: 0.95rem;
+    font-size: 2rem;
     color: #555;
     list-style-type: disc;
     margin-left: 1.5rem;
@@ -163,6 +165,25 @@ body {
     padding-top: 2rem;
     border-top: 1px solid #ecf0f1;
     color: #7f8c8d;
+}
+
+
+.custom-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.custom-list li {
+    position: relative;
+    padding-left: 1.5em;
+    font-size: 0.95em; /* Example for smaller font */
+}
+
+.custom-list li::before {
+    content: "✔️";
+    position: absolute;
+    left: 0;
+    top: 0;
 }
 
 @media (max-width: 768px) {
