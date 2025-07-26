@@ -12,25 +12,26 @@
         <header class="header">
             <h1 class="title">Fix the Hairball</h1>
             <h3 class="body-title"> The only pedestrian connection to Southeast San Francisco. </h3>
-            <h4 class="body-subtitle">The "hairball" is the name of a dangerous intersection underneath the US-101 and Cesar Chavez streets. This intersection is relied upon by walkers, bikers, and drivers alike.</h4>
-            <!--<h5 class="body"> Immediate neighborhoods affected: Mission, Bernal, Potrero, Bayview, and Portola. </h5> -->
         </header>
-
-        <div class="gif-container">
-            <div class="gif-placeholder">
-                <a href="https://youtu.be/KFwstkaII6A" target="_blank">
-                    <img src="fix-this-crossing-akash-sign.jpg" alt="Fix the Hairball GIF" class="gif-image">
-            </div>
+        <div class="gif-placeholder-responsive">
+            <img src="fix-this-crossing-akash-sign.jpg" alt="Fix the Hairball GIF" class="gif-image">
         </div>
 
-        <div clas="gif-container">
-            <div class="gif-placeholder">
-                <img src="hairball-frisc.jpg" alt="Street Map of Hairball" class="gif-image-responsive">
-            </div>
-        </div>
+        <h4 class="body-subtitle">
+            <p> The <strong>hairball</strong> is the name of a <strong> dangerous intersection </strong> underneath the US-101 and Cesar Chavez streets, relied upon by walkers, bikers, and drivers alike. </p>
+            <p> This page is a <strong> grassroots petition </strong> to show community support for improving this intersection. </p>
+        </h4>
 
-        <div class="subtitle">
-            Video below shows this intersection at night (0:30-onwards).
+        <div class="sign-here-btn-padding">
+            <button class="sign-here-btn" onclick="document.getElementById('google-form-section').scrollIntoView({ behavior: 'smooth' });">
+                Sign The Petition Here!
+            </button>
+        </div>
+        
+        <div class="body-title">
+        <div class="video-title">
+                <p> This is a recent video of the intersection at night, traveling Southbound, by bike. </p>
+            </div>
         </div>
 
         <div class="gif-container">
@@ -43,29 +44,46 @@
             </iframe>
         </div>
 
+        <div class="video-title">
+            <p> Location, Location, Location </p>
+        </div>
+
+
+        <h4 class="body-subtitle-left">
+            <li> See the US-101 and Cesar Chavez intersection below. </li>
+            <li> This is a vital crossing for the Mission, Bernal, Portola, Bayview, and Potrero neighborhoods. </li>
+        </h4>
+
+        <div class="gif-placeholder-responsive">
+            <img src="hairball-frisc.jpg" alt="Street Map of Hairball" class="gif-image-responsive">
+        </div>
+
+        <div class="elevation-map">
+            <p> Local Elevation Map </p>
+        </div>
+
+        <h4 class="body-subtitle-left">
+            <li> This is the area's ONLY crossing that does not involve climbing the city's steepest hills (Bernal, Potrero). </li>
+            <li> Going around it requires doubling or tripling one's distance traveled. </li>
+        </h4>
+
+        <div class="gif-placeholder-responsive">
+            <a href="https://en-us.topographic-map.com/map-vx51/San-Francisco/?center=37.74452%2C-122.40074&zoom=14" target="_blank" rel="noopener">
+                <img src="elevation_map.jpg" alt="Elevation Map of Hairball" class="gif-image-responsive">
+            </a>
+        </div>
+
+
+       
         <div class="problems-section">
             <h2 class="problems-title">List of issues</h2>
             <ul class="problems-list">
-                <li>Pitch-black after sunset (430 pm in the winter)!</li>
+                <li>No lighting: Area is pitch-black after sunset (430 pm in the winter)!</li>
                 <li>Several curbs and sidewalks are too narrow, or too close to vehicles.</li>
                 <li>Intersections with vehicles have major blind spots. Vehicles do not yield.</li>
                 <li>There are persistent encampments with items across the sidewalk.</li>
                 <li>Some pedestrian paths lead directly into vehicle traffic with no protection.</li>
             </ul>
-        </div>
-        
-        <div class="gif-container">
-            <h1 class="needs-list"> Why can't people just use another intersection? </h1>
-            <h4 class="body-subtitle"> This is the only viable option for surrounding neighborhoods that doesn't involve climbing huge hills or doubling the route distance.</h4>
-            <div class="needs-details">
-                <li> Surrounded by steepest neighborhoods in San Francisco (Bernal Heights and Potrero Hill). </li>
-                <li> Going around these hills requires going to the waterfront (industrial section of Bayview), or </li>
-                <li> Going through the Excelsior and Noe Valley, which are extremely far from the neighborhoods affected. </li>
-            </div>
-        </div>
-
-        <div class="subtitle">
-            <h2 class="needs-list"> TODO Add a Map of the intersection, then link videos to different parts of the map </h2>
         </div>
 
         <div class="video-carousel-section">
@@ -95,13 +113,13 @@
             </ul>
         </div>
 
-                <div class="subtitle">
+        <div class="subtitle">
             <h2 class="needs-list">Get Involved</h2>
             <p>Share your thoughts or see community feedback below:</p>
         </div>
 
         <!-- Google Form Embed -->
-        <div class="google-form-section" style="margin-bottom:2rem;">
+        <div id="google-form-section" class="google-form-section" style="margin-bottom:2rem;">
             <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfLT2tg8c94PuJYbmYL5h_71efbrBYR4uJqxzQxisdmeoPsfw/viewform?embedded=true"
                 width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">
                 Loading…
@@ -116,13 +134,9 @@
         </div>
 
 
-        <div class="subtitle">
-            <h2 class="needs-list"> Contact borde.akash@gmail.com if you would like to get involved! </h2>
-        </div>
-
         <footer class="footer">
             <p>A work-in-progress community initiative to improve pedestrian safety in Southeast San Francisco. July 2025. </p>
-            <p>Still gathering friends/neighbors input before submitting this to the city government. Contact borde.akash@gmail.com if you would like to help out!</p>
+            <p>Contact borde.akash@gmail.com if you would like to help out!</p>
         </footer>
     </div>
 </body>
