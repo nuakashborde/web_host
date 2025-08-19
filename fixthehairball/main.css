@@ -388,3 +388,50 @@ body {
         height: 200px;
     }
 }
+
+.custom-link {
+    color: #0074d9;
+    text-decoration: underline;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.custom-link:hover,
+.custom-link:focus {
+    color: #005fa3;
+    text-decoration: underline;
+}
+
+.improvements-section {
+    background-color: #ffffff;
+    padding: 1rem 1.25rem;
+    margin: 2rem 0;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+}
+
+.improvements-title {
+    font-size: 1.1rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    text-align: left;
+}
+
+.improvements-list {
+    margin-left: 1.25rem;
+    color: #3d4b55;
+    font-size: 0.95rem;
+    line-height: 1.45;
+}
+
+.improvements-list li {
+    margin-bottom: 0.35rem;
+}
+
+.improvements-subtitle {
+    font-size: 0.95rem;
+    color: #596673;
+    margin-top: 0.25rem;
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+}
