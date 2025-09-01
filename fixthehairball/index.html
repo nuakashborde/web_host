@@ -8,8 +8,30 @@
 
 </head>
 <body>
+    
     <div class="container">
         <header class="header">
+            <!-- menu toggle: insert here as first children of header -->
+            <button id="menu-toggle" class="menu-toggle" aria-controls="top-menu" aria-expanded="false" aria-label="Open menu">
+                <span class="hamburger" aria-hidden="true"></span>
+                <span class="menu-label">Menu</span>
+            </button>
+
+
+            <nav id="top-menu" class="top-menu">
+                <ul>
+                    <li><a href="#top">Home</a></li>
+                    <li><a href="#video">Night Video</a></li>
+                    <li><a href="#location">Location</a></li>
+                    <li><a href="#problems">List of issues</a></li>
+                    <li><a href="#solutions-section">Ways to improve</a></li>
+                    <li><a href="#google-form-section">Petition</a></li>
+                    <li><a href="#community-support-section">Endorsements</a></li>
+                    <li><a href="#improvements-section">Acknowledgements</a></li>
+                    <li><a href="#sfmta-walkthrough">SFMTA Response</a></li>
+                </ul>
+            </nav>
+
             <h1 class="title">Fix the Hairball</h1>
             <h3 class="body-title"> The only pedestrian connection to Southeast San Francisco. </h3>
         </header>
@@ -34,7 +56,7 @@
             </div>
         </div>
 
-        <div class="gif-container">
+        <div class="gif-container" id="video">
             <iframe width="100%" height="450"
                 src="https://www.youtube.com/embed/KFwstkaII6A?autoplay=1&mute=1&loop=1&playlist=KFwstkaII6A"
                 title="Nighttime Ride Through Hairball"
@@ -45,7 +67,7 @@
             <div class="video-caption">Not sure why my GoPro says this was 2022... this was taken March 2025.</div>
         </div>
 
-        <div class="video-title">
+        <div class="video-title" id="location">
             <p> The Hairball's Location </p>
         </div>
 
@@ -76,7 +98,7 @@
 
 
        
-        <div class="problems-section">
+        <div class="problems-section" id="problems">
             <h2 class="problems-title">List of issues</h2>
             <ul class="problems-list">
                 <li>No lighting: Area is pitch-black after sunset (430 pm in the winter)!</li>
@@ -103,18 +125,34 @@
             </div>
         </div>
 
-        <div class="solutions-section">
+        <div class="solutions-section" id="solutions">
             <h2 class="problems-title">Ways to improve the intersection:</h2>
             <ul class="custom-list">
                 <li>Add lighting (permanent or motion-sense) for usage at dark.</li>
+                <ul class="sub-list">
+                    <li>[SFMTA Walkthrough] See lighting section <a href="#sfmta-walkthrough" class="custom-link">here</a></li>
+                </ul>
                 <li>Widen several curbs for accessbility and safety.</li>
+                <ul class="sub-list"> <li> [SFMTA Walkthrough] Short-term and long-term plan addresses most curbs. </li> </ul>
                 <li>Add mirrors to eliminate vehicle-to-pedestrian blind spots.</li>
+                <ul class="sub-list"> <li> [SFMTA Walkthrough] Mirrors are rarely used in traffic practice for vehicle-to-pedestrian/bike visibility. 
+                    They would not work well in the constrained off-ramp areas of the hairball. </li> </ul>
                 <li>Add fence between Potrero Northbound and Sidewalk.</li>
+                <ul class="sub-list"> <li> [SFMTA Walkthrough] It is unclear that the fence will not add new hazards 
+                    for pedestrians/bikers here without expanding the bridge, 
+                    which is not in scope for the short or long-term changes. 
+                    A bridge upgrade requires a major transit project upwards of $10M, potentially $100M </li> </ul>
                 <li>Consider adding traffic slowing measures.</li>
+                <ul class="sub-list"> <li> [SFMTA Walkthrough] Several areas are highlighted in for traffic-slowing measures in the August 2025
+                    Short-term and long-term planning. See <a href="#sfmta-walkthrough" class="custom-link">here</a> </li> </ul>
                 <li>Add signage for both pedestrians (e.g. a map of hairball) and cars (yield signs, flashing lights).</li>
-                <li>Add electrical covers to sidewalks where missing.</li>
+                <ul class="sub-list"> <li> [SFMTA Walkthrough] Wayfinding signs have been added to the short-term planning (thanks to this petition).
+                    <a href="https://www.sfmta.com/getting-around/walk/pedestrian-improvements-toolkit/flashing-beacons" class="custom-link">Flashing Beacons</a>
+                    Flashing Beacons are included in the long-term plan as well.
+                </li> </ul>
                 <li>Protected bike lane, could use crash barriers such as these identified by 
                     <a href="" target="_blank" class="custom-link">this 2017 article.</a>
+                    <ul class="sub-list"> <li> [SFMTA Walkthrough] Short-term plan adds concrete barriers to protect the bike lane. </li> </ul>
                 </li>
             </ul>
         </div>
@@ -181,8 +219,17 @@
             </div>
         </div>
 
+        <div id="sfmta-walkthrough" class="sfmta-walkthrough" style="margin-top:1.5rem;">
+            <h2 class="improvements-title">SFMTA Walkthrough</h2>
+            <p class="body-subtitle" style="margin-top:0.5rem;">Notes and observations from the SFMTA walkthroughs and guidance on recommended lighting/visibility improvements. See the official SFMTA resources for full details: <a href="https://www.sfmta.com" target="_blank" class="custom-link">sfmta.com</a>.</p>
+            <p class="body-subtitle">
+                
+            </p>
+
+        </div>
+
         <!-- Improvements already made -->
-        <div class="improvements-section">
+        <div class="improvements-section" id="improvements-section">
             <h2 class="improvements-title">Didn't they already "fix this intersection"?</h2>
             <h4 class="improvements-subtitle">There have been serious improvements over time, including those listed below. However, as the pictures, videos, and comments show, there is still a way to go. 
                 Regardless, it is important to acknowledge the progress made.</h4>           
@@ -201,5 +248,18 @@
             <p>Contact borde.akash@gmail.com if you would like to help out!</p>
         </footer>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const btn = document.getElementById('menu-toggle');
+            const menu = document.getElementById('top-menu');
+            if (!btn || !menu) return;
+            const closeMenu = () => { menu.classList.remove('open'); btn.setAttribute('aria-expanded','false'); };
+            const openMenu = () => { menu.classList.add('open'); btn.setAttribute('aria-expanded','true'); };
+            btn.addEventListener('click', (e) => { e.stopPropagation(); menu.classList.contains('open') ? closeMenu() : openMenu(); });
+            menu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+            document.addEventListener('click', (e) => { if (!menu.contains(e.target) && !btn.contains(e.target)) closeMenu(); });
+        });
+    </script>
 </body>
 </html> 

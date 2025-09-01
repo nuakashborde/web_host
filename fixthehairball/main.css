@@ -275,7 +275,28 @@ body {
 }
 
 .custom-list li::before {
-    content: "✔️";
+    content: "💡";
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.sub-list {
+    list-style-type: disc;
+    list-style-position: outside;
+    margin: 0rem 0 0rem 0rem; /* indented from the parent bullet */
+    padding-left: 3rem;            /* extra padding for the bullets */
+    font-style: italic;              /* italicized font for sub-items */
+    font-size: 1rem;              /* slightly smaller than top-level items */
+    color: #34495e;
+}
+
+.sub-list li {
+    margin-bottom: 0.35rem;
+}
+
+.sub-list li::before {
+    content: "";
     position: absolute;
     left: 0;
     top: 0;
@@ -411,10 +432,10 @@ body {
 }
 
 .improvements-title {
-    font-size: 1.1rem;
+    font-size: 2.1rem;
     color: #2c3e50;
     margin-bottom: 0.5rem;
-    text-align: left;
+    text-align: center;
 }
 
 .improvements-list {
@@ -434,4 +455,129 @@ body {
     margin-top: 0.25rem;
     margin-bottom: 0.75rem;
     font-weight: 500;
+}
+
+/* Top hamburger menu */
+/* Adjust menu toggle so the "Menu" label fits */
+.menu-toggle {
+    background: transparent;
+    border: none;
+    min-width: 44px;
+    padding: 6px 10px;           /* allow room for label */
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;                    /* space between icon and label */
+    justify-content: center;
+    cursor: pointer;
+    position: absolute;
+    left: 16px;
+    top: 14px;
+    z-index: 999;
+}
+
+/* visible text label next to hamburger */
+.menu-label {
+    font-size: 0.95rem;
+    color: #2c3e50;
+    font-weight: 600;
+    line-height: 1;
+    user-select: none;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: #2c3e50;
+    border-radius: 2px;
+    position: relative;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: "";
+    position: absolute;
+    left: 0;
+}
+
+.hamburger::before {
+    top: -7px;
+}
+
+.hamburger::after {
+    top: 7px;
+}
+
+/* Menu panel */
+.top-menu {
+    display: none;
+    position: absolute;
+    left: 16px;
+    top: 64px;
+    background: #ffffff;
+    border: 1px solid rgba(44,62,80,0.08);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    border-radius: 8px;
+    padding: 0.5rem;
+    min-width: 200px;
+    z-index: 998;
+}
+
+/* show when JS adds .open */
+.top-menu.open {
+    display: block;
+}
+
+.top-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.top-menu li {
+    margin: 0;
+}
+
+.top-menu a {
+    display: block;
+    padding: 0.5rem 0.75rem;
+    color: #2c3e50;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-radius: 4px;
+}
+
+.top-menu a:hover,
+.top-menu a:focus {
+    background: rgba(231,76,60,0.06);
+    color: #e74c3c;
+}
+
+/* keep the hamburger visible on wide screens too; layout for large screens */
+@media (min-width: 900px) {
+    /* keep the toggle visible; present menu as inline when open */
+    .top-menu {
+        position: static;
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        min-width: auto;
+    }
+    .top-menu.open {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+    }
+    .top-menu ul { display: flex; gap: 1rem; align-items: center; padding:0; margin:0; }
+    .top-menu a { padding: 0; font-size: 1rem; }
+    .header { padding-top: 10px; }
+}
+
+/* ensure menu doesn't overlay content awkwardly on small heights */
+@media (max-height: 500px) {
+    .top-menu { max-height: 60vh; overflow: auto; }
 }
