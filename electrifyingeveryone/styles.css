@@ -1,0 +1,125 @@
+/* Ensure h1 and h2 have the same width and are centered */
+h1, h2 {
+	display: block;
+	max-width: 700px;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+/* styles.css */
+body {
+margin: 0;
+	font-family: 'IBM Plex Mono', 'Fira Mono', 'JetBrains Mono', 'SF Mono', 'Menlo', 'Monaco', 'Liberation Mono', 'Courier New', Courier, monospace, serif;
+	color: #222;
+	background-color: #acacac;
+	letter-spacing: 0.01em;
+	font-size: 1.05rem;
+}
+
+.hero {
+text-align: center;
+padding: 40px 20px;
+background-color: #aba944;
+color: white;
+}
+
+.hero-image {
+width: 100%;
+max-height: 400px;
+object-fit: cover;
+border-radius: 8px;
+margin-bottom: 20px;
+}
+
+.title {
+font-size: 2.5rem;
+margin: 10px 0 5px;
+	font-family: 'IBM Plex Mono', 'Fira Mono', 'JetBrains Mono', 'SF Mono', 'Menlo', 'Monaco', 'Liberation Mono', 'Courier New', Courier, monospace, serif;
+	letter-spacing: 0.03em;
+	color: #111;
+	text-shadow: 0 1px 0 #f5f5f5, 0 0.5px 0 #e0e0e0;
+}
+
+.subtitle {
+font-size: 1.2rem;
+font-weight: 300;
+	font-weight: 400;
+	color: #444;
+	font-family: 'IBM Plex Mono', 'Fira Mono', 'JetBrains Mono', 'SF Mono', 'Menlo', 'Monaco', 'Liberation Mono', 'Courier New', Courier, monospace, serif;
+	letter-spacing: 0.02em;
+}
+
+.content {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 20px;
+padding: 40px;
+max-width: 1000px;
+margin: auto;
+}
+
+.card {
+	background: #fffde7;
+border-radius: 10px;
+padding: 20px;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+transition: transform 0.2s ease;
+	font-family: 'IBM Plex Mono', 'Fira Mono', 'JetBrains Mono', 'SF Mono', 'Menlo', 'Monaco', 'Liberation Mono', 'Courier New', Courier, monospace, serif;
+}
+
+.card:hover {
+transform: translateY(-5px);
+}
+
+.card h3 {
+margin-top: 0;
+	color: #222;
+	font-family: 'IBM Plex Mono', 'Fira Mono', 'JetBrains Mono', 'SF Mono', 'Menlo', 'Monaco', 'Liberation Mono', 'Courier New', Courier, monospace, serif;
+	letter-spacing: 0.02em;
+	font-size: 1.3rem;
+}
+
+footer {
+text-align: center;
+padding: 20px;
+	background-color: #f5f5f5;
+font-size: 0.9rem;
+	color: #444;
+	border-top: 1.5px solid #e0e0e0;
+	font-family: 'IBM Plex Mono', 'Fira Mono', 'JetBrains Mono', 'SF Mono', 'Menlo', 'Monaco', 'Liberation Mono', 'Courier New', Courier, monospace, serif;
+}
+
+/* Futuristic accent: subtle glowing border for cards */
+.card {
+	position: relative;
+}
+.card::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	border-radius: 10px;
+	pointer-events: none;
+	box-shadow: 0 0 0 0 #fffbe6, 0 0 12px 2px #e0e0e0 inset;
+	transition: box-shadow 0.3s;
+}
+.card:hover::after {
+	box-shadow: 0 0 0 0 #fffbe6, 0 0 24px 4px #bdbdbd inset;
+}
+
+/* Muted techy details: thin lines, mono font, flat look */
+hr {
+	border: none;
+	border-top: 1.5px dashed #e0e0e0;
+	margin: 32px 0;
+}
+
+a {
+	color: #111;
+	text-decoration: underline dotted #bdbdbd;
+	transition: color 0.2s;
+}
+a:hover {
+	color: #004aad;
+	text-decoration: underline solid #004aad;
+}
