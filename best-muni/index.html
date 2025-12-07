@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Redirecting…</title>
+  <!-- Client-side redirect for static hosts -->
+  <meta http-equiv="refresh" content="0;url=https://app.opinionx.co/preview/1fc24583-e32f-4324-8673-ba2235253013/intro">
+  <link rel="canonical" href="https://app.opinionx.co/preview/1fc24583-e32f-4324-8673-ba2235253013/intro">
+  <style>
+    html,body{height:100%;margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial}
+    .wrap{height:100%;display:flex;align-items:center;justify-content:center;background:#fffbe6;color:#111}
+    .card{max-width:680px;padding:28px;border-radius:10px;border:1px solid #e0e0e0;background:#fff}
+    a{color:#004aad}
+  </style>
+  <script>
+    // Immediate JS redirect (works even if meta is ignored). Uses replace() to avoid polluting history.
+    (function(){
+      var destination = 'https://app.opinionx.co/preview/1fc24583-e32f-4324-8673-ba2235253013/intro';
+      try{
+        window.location.replace(destination);
+      }catch(e){
+        // If replace fails, set href as fallback
+        window.location.href = destination;
+      }
+    })();
+  </script>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <h1>Redirecting to survey</h1>
+      <p>If you are not redirected automatically, <a href="https://app.opinionx.co/preview/1fc24583-e32f-4324-8673-ba2235253013/intro">click here to open the survey</a>.</p>
+      <p>If you control the domain and want a server-side permanent (301) redirect for SEO and analytics, tell me and I can show the config for Apache, Nginx, Netlify (_redirects) or similar.</p>
+    </div>
+  </div>
+</body>
+</html>
