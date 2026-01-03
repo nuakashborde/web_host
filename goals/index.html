@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Current Goals List</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <div>
+        <h1 id="month">Goals due January 2026</h1>
+        <time id="date" class="date">Set on: Friday, January 2</time>
+      </div>
+    </header>
+
+    <ol id="goals" class="goals" aria-live="polite">
+      <li class="goal">
+        <div class="goal-row">
+          <button class="status-toggle status-not-started" aria-label="Not started" data-status="not-started" title="Status: Not started">○</button>
+          <span class="drag-handle" title="Item">☰</span>
+          <div class="title" role="heading" aria-level="2">Global Energy Access</div>
+          <div class="actions"></div>
+        </div>
+        <ul class="sublist">
+          <li class="sub">
+            <button class="status-toggle status-not-started status-sub" aria-label="Not started" data-status="not-started" title="Status: Not started">○</button>
+            <span class="sub-text">Write a clear Memorandum of Understanding</span>
+          </li>
+          <li class="sub">
+            <button class="status-toggle status-not-started status-sub" aria-label="Not started" data-status="not-started" title="Status: Not started">○</button>
+            <span class="sub-text">Get approval from all 5 parties</span>
+          </li>
+          <li class="sub">
+            <button class="status-toggle status-not-started status-sub" aria-label="Not started" data-status="not-started" title="Status: Not started">○</button>
+            <span class="sub-text">Create proposal to show 9zero and friends/family. It should have the background research about metering ready.</span>
+          </li>
+        </ul>
+      </li>
+
+      <li class="goal">
+        <div class="goal-row">
+          <button class="status-toggle status-in-progress" aria-label="In progress" data-status="in-progress" title="Status: In progress">◐</button>
+          <span class="drag-handle" title="Item">☰</span>
+          <div class="title" role="heading" aria-level="2">Improving lives locally in SF</div>
+          <div class="actions"></div>
+        </div>
+        <ul class="sublist">
+          <li class="sub">
+            <button class="status-toggle status-not-started status-sub" aria-label="Not started" data-status="not-started" title="Status: Not started">○</button>
+            <span class="sub-text">Establish rapport with Supervisor Office - provide regular updates</span>
+          </li>
+          <li class="sub">
+            <button class="status-toggle status-not-started status-sub" aria-label="Not started" data-status="not-started" title="Status: Not started">○</button>
+            <span class="sub-text">Provide an update on the Hairball</span>
+          </li>
+         <li class="sub">
+            <button class="status-toggle status-not-started status-sub" aria-label="Not started" data-status="not-started" title="Status: Not started">○</button>
+            <span class="sub-text">Create form / list for people to improve District 9</span>
+          </li>
+        </ul>
+      </li>
+
+      <li class="goal">
+        <div class="goal-row">
+          <button class="status-toggle status-complete" aria-label="Complete" data-status="complete" title="Status: complete">✓</button>
+          <span class="drag-handle" title="Item">☰</span>
+          <div class="title" role="heading" aria-level="2">Spreading good ideas</div>
+          <div class="actions"></div>
+        </div>
+        <ul class="sublist">
+          <li class="sub">
+            <button class="status-toggle status-complete status-sub" aria-label="Complete" data-status="complete" title="Status: complete">✓</button>
+            <span class="sub-text">Launch 2x Muni Takes Videos</span>
+          </li>
+        </ul>
+         <ul class="sublist">
+          <li class="sub">
+            <button class="status-toggle status-complete status-sub" aria-label="Complete" data-status="complete" title="Status: complete">✓</button>
+            <span class="sub-text">Post 1x substack article and 3x tweets</span>
+          </li>
+        </ul>
+         <ul class="sublist">
+          <li class="sub">
+            <button class="status-toggle status-complete status-sub" aria-label="Complete" data-status="complete" title="Status: complete">✓</button>
+            <span class="sub-text">Link socials to website</span>
+          </li>
+        </ul>
+      </li>
+
+
+      <li class="goal">
+        <div class="goal-row">
+          <button class="status-toggle status-complete" aria-label="Complete" data-status="complete" title="Status: complete">✓</button>
+          <span class="drag-handle" title="Item">☰</span>
+          <div class="title" role="heading" aria-level="2">Personal Finance</div>
+          <div class="actions"></div>
+        </div>
+        <ul class="sublist">
+          <li class="sub">
+            <button class="status-toggle status-complete status-sub" aria-label="Complete" data-status="complete" title="Status: complete">✓</button>
+            <span class="sub-text">Figure out IRA account mess - consolidate into one proper one</span>
+          </li>
+        </ul>
+         <ul class="sublist">
+          <li class="sub">
+            <button class="status-toggle status-complete status-sub" aria-label="Complete" data-status="complete" title="Status: complete">✓</button>
+            <span class="sub-text">Move HSA into investment account</span>
+          </li>
+        </ul>
+      </li>
+    </ol>
+  </main>
+
+  <script>
+    // Tri-state status toggle logic: cycles not-started -> in-progress -> complete
+    (function(){
+      const order = ['not-started','in-progress','complete'];
+      document.querySelectorAll('.status-toggle').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const current = btn.dataset.status || 'not-started';
+          const next = order[(order.indexOf(current) + 1) % order.length];
+          updateButton(btn, next);
+        });
+        btn.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            btn.click();
+          }
+        });
+      });
+
+      function updateButton(btn, status){
+        btn.dataset.status = status;
+        btn.classList.remove('status-not-started','status-in-progress','status-complete');
+        btn.classList.add('status-' + status);
+        if(status === 'not-started'){
+          btn.setAttribute('aria-label','Not started');
+          btn.title = 'Status: Not started';
+          btn.textContent = '○';
+        } else if(status === 'in-progress'){
+          btn.setAttribute('aria-label','In progress');
+          btn.title = 'Status: In progress';
+          btn.textContent = '◐';
+        } else {
+          btn.setAttribute('aria-label','Complete');
+          btn.title = 'Status: complete';
+          btn.textContent = '✓';
+        }
+      }
+    })();
+  </script>
+</body>
+</html>
