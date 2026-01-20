@@ -66,6 +66,9 @@ html,body { height:100%; margin:0; font-family: var(--serif); background:var(--b
   font-size:13px;
 }
 
+/* give the copy button a slightly tighter look */
+#copy-link { font-size:13px; padding:6px 10px; }
+
 .goals {
   list-style:decimal;
   padding-left:32px;
@@ -110,6 +113,20 @@ html,body { height:100%; margin:0; font-family: var(--serif); background:var(--b
 }
 
 /* visual states */
+.status-empty{
+  background:transparent;
+  color:transparent; /* hide default symbol text */
+  border-color:rgba(31,41,51,0.04);
+  box-shadow:none;
+}
+
+/* keep a subtle focus ring for the empty state so keyboard users can see it */
+.status-empty:focus{
+  outline:3px solid rgba(140,185,255,0.18);
+  outline-offset:2px;
+}
+
+/* existing states unchanged */
 .status-not-started{
   background:transparent;
   color:var(--muted);
